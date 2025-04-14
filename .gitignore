@@ -1,0 +1,5 @@
+*.iml
+.idea
+src/internal/secrets.php
+src/logs/application.log
+/nbproject/private/

@@ -1,0 +1,23 @@
+nav {
+    background-color: navy;
+}
+
+h5, h6 {
+    margin-bottom: 2rem;
+}
+
+#request-in-progress-tip {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: none;
+}
+
+#request-in-progress-tip .progress {
+    margin: 0;
+}
+
+#email-validation-helper {
+    display: none;
+}
