@@ -1,1 +1,1 @@
-# memo-app
+# repetytor
