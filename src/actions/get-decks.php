@@ -1,6 +1,5 @@
 <?php
 require_once '../internal/init-json.php';
-require_once '../internal/Json.php';
 
 class Deck{
     public function __construct(

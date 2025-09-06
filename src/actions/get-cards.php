@@ -1,13 +1,10 @@
 <?php
 require_once '../internal/init-json.php';
 // ==
-require_once '../internal/CardsGenerator.php';
 require_once '../internal/standard-generators.php';
 require_once '../internal/biased-random.php';
-require_once '../internal/Card.php';
-require_once '../internal/Json.php';
 
-$deckId = $_GET['deckId'] ?? throw new MissingParameterException('deckId');
+$deckId = $_GET['deckId'] ?? throw new Exception('deckId');
 $limit = $_GET['limit'] ?? 10;
 $randomize = $_GET['randomize'] ?? true;
 

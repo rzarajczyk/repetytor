@@ -1,5 +1,5 @@
 <?php
-require_once 'init-internal.php';
+require_once 'init.php';
 
 function random(): float {
     return mt_rand() / mt_getrandmax();

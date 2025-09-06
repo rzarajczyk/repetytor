@@ -1,20 +1,21 @@
 <?php
-require_once 'init-web.php';
+require_once 'init.php';
 header("Content-type: application/json; charset=utf-8");
 
-require_once 'NonCriticalException.php';
+class Json {
+    public static function encode(mixed $data) {
+        $flags = JSON_PRETTY_PRINT;
+        $flags |= JSON_THROW_ON_ERROR;
+        return json_encode($data, $flags);
+    }
 
-class MissingParameterException extends Exception {
-    public function __construct(
-        public string $param
-    ) {
-        parent::__construct("Missing parameter $this->param");
+    public static function decode(string $data) {
+        return json_decode($data, associative: true);
     }
 }
 
 
 set_exception_handler(function (Throwable $exception) {
-    require_once 'Json.php';
     require_once 'Config.php';
     $config = ConfigProvider::instance();
     $result = [
@@ -27,9 +28,8 @@ set_exception_handler(function (Throwable $exception) {
             'trace' => $config->show_errors() ? $exception->getTrace() : [],
         ]
     ];
-    if (!($exception instanceof NonCriticalException)) {
-        http_response_code(500);
-    }
+
+    http_response_code(500);
     echo Json::encode($result);
 });
 

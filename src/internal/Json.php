@@ -1,5 +1,5 @@
 <?php
-require_once 'init-internal.php';
+require_once 'init.php';
 
 class Json {
     public static function encode(mixed $data) {

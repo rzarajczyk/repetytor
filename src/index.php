@@ -1,5 +1,5 @@
 <?php
-require_once 'internal/init-web.php';
+require_once 'internal/init.php';
 require_once '_template.php';
 
 Template::header('index');

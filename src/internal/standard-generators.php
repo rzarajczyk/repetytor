@@ -1,7 +1,5 @@
 <?php
-require_once 'init-internal.php';
-
-require_once 'CardsGenerator.php';
+require_once 'init.php';
 
 function atLeastOneInArray($array, $left, $right)
 {
@@ -11,6 +9,34 @@ function atLeastOneInArray($array, $left, $right)
 function bothInArray($array, $left, $right)
 {
     return in_array($left, $array) && in_array($right, $array);
+}
+
+class Card implements JsonSerializable {
+    public function __construct(
+        public ?string $id,
+        public string $question,
+        public string $answer,
+        public float $bias,
+        public int $timeout,
+        public string $type
+    ) {}
+
+    public function jsonSerialize(): array {
+        return array(
+            'id' => $this->id,
+            'question' => $this->question,
+            'answer' => $this->answer,
+            'timeout' => $this->timeout,
+            'bias' => $this->bias,
+            'type' => $this->type
+        );
+    }
+}
+
+
+interface CardsGenerator {
+    /** @return Card[] */
+    function generate(): array;
 }
 
 class MultiplicationCardsGenerator implements CardsGenerator {

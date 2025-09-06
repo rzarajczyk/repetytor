@@ -1,5 +1,5 @@
 <?php
-require_once 'internal/init-internal.php';
+require_once 'internal/init.php';
 $VERSION = '1';//time();
 
 class Template {
@@ -28,7 +28,7 @@ static function header($name) {
 <nav>
     <div class="nav-wrapper">
         <a href="#" data-target="sidenav" class="sidenav-trigger show-on-large" id="menu"><i class="material-icons">menu</i></a>
-        <a href="index.php" class="brand-logo">Memo</a>
+        <a href="index.php" class="brand-logo">Repetytor</a>
     </div>
 </nav>
 
