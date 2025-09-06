@@ -13,7 +13,7 @@ static function header($name) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Memo</title>
+    <title>Repetytor</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="<?=Template::$name?>.css?v=<?=$VERSION; ?>">
