@@ -1,4 +1,4 @@
-package com.repetytor
+package pl.zarajczyk.repetytor
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

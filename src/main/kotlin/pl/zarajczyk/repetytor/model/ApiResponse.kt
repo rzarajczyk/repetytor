@@ -1,4 +1,4 @@
-package com.repetytor.model
+package pl.zarajczyk.repetytor.model
 
 data class ApiResponse<T>(
     val status: Boolean,

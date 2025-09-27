@@ -1,4 +1,4 @@
-package com.repetytor.controller
+package pl.zarajczyk.repetytor.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

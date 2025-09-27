@@ -1,4 +1,4 @@
-package com.repetytor.service
+package pl.zarajczyk.repetytor.service
 
 import kotlin.random.Random
 

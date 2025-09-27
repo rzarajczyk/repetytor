@@ -1,7 +1,7 @@
-package com.repetytor.controller
+package pl.zarajczyk.repetytor.controller
 
-import com.repetytor.model.LinkItem
-import com.repetytor.model.NavigationResponse
+import pl.zarajczyk.repetytor.model.LinkItem
+import pl.zarajczyk.repetytor.model.NavigationResponse
 import org.springframework.web.bind.annotation.*
 
 @RestController

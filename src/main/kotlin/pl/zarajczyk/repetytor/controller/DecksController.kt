@@ -1,7 +1,7 @@
-package com.repetytor.controller
+package pl.zarajczyk.repetytor.controller
 
-import com.repetytor.model.ApiResponse
-import com.repetytor.model.Deck
+import pl.zarajczyk.repetytor.model.ApiResponse
+import pl.zarajczyk.repetytor.model.Deck
 import org.springframework.web.bind.annotation.*
 
 @RestController

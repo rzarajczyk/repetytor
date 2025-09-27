@@ -1,6 +1,6 @@
-package com.repetytor.service
+package pl.zarajczyk.repetytor.service
 
-import com.repetytor.model.Card
+import pl.zarajczyk.repetytor.model.Card
 
 interface CardsGenerator {
     fun generate(): List<Card>

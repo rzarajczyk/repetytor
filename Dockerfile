@@ -1,23 +1,15 @@
-FROM openjdk:17-jdk-slim
-
-WORKDIR /app
-
-# Copy gradle wrapper and build files
-COPY gradle/ gradle/
-COPY gradlew .
-COPY build.gradle .
-
-# Copy source code
-COPY src/ src/
-
-# Make gradlew executable
-RUN chmod +x gradlew
-
-# Build the application
-RUN ./gradlew build -x test
-
-# Expose port 8080
+FROM eclipse-temurin:21-jdk
 EXPOSE 8080
+WORKDIR /app
+COPY build/libs/app.jar app.jar
 
-# Run the application
-CMD ["java", "-jar", "build/libs/repetytor-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT java \
+  -XX:InitialRAMPercentage=75.0 \
+  -XX:MaxRAMPercentage=75.0 \
+  -XX:+UseG1GC \
+  -XX:+ExitOnOutOfMemoryError \
+  -Xlog:gc*:stderr:time \
+  -XX:+HeapDumpOnOutOfMemoryError \
+  -Dfile.encoding=UTF-8 \
+  -Djava.security.egd=file:/dev/./urandom \
+  -jar app.jar

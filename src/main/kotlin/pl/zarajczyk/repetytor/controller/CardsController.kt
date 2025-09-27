@@ -1,10 +1,10 @@
-package com.repetytor.controller
+package pl.zarajczyk.repetytor.controller
 
-import com.repetytor.model.ApiResponse
-import com.repetytor.model.Card
-import com.repetytor.service.AdditionCardsGenerator
-import com.repetytor.service.BiasedRandom
-import com.repetytor.service.MultiplicationCardsGenerator
+import pl.zarajczyk.repetytor.model.ApiResponse
+import pl.zarajczyk.repetytor.model.Card
+import pl.zarajczyk.repetytor.service.AdditionCardsGenerator
+import pl.zarajczyk.repetytor.service.BiasedRandom
+import pl.zarajczyk.repetytor.service.MultiplicationCardsGenerator
 import org.springframework.web.bind.annotation.*
 
 @RestController
