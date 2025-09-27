@@ -32,7 +32,7 @@ tasks.withType<Test> {
 }
 
 application {
-    mainClass.set("pl.zarajczyk.repetytor.RepetytorApplication")
+    mainClass.set("pl.zarajczyk.repetytor.RepetytorApplicationKt")
 }
 
 tasks {
