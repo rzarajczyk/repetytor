@@ -1,7 +1,12 @@
+FROM eclipse-temurin:21-jdk AS build
+WORKDIR /app
+COPY ./ .
+RUN ./gradlew clean build -x test
+
 FROM eclipse-temurin:21-jdk
 EXPOSE 8080
 WORKDIR /app
-COPY build/libs/app.jar app.jar
+COPY --from=build build/libs/app.jar app.jar
 
 ENTRYPOINT java \
   -XX:InitialRAMPercentage=75.0 \
