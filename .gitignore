@@ -3,3 +3,6 @@
 src/internal/secrets.php
 src/logs/application.log
 /nbproject/private/
+build
+.gradle
+.idea
