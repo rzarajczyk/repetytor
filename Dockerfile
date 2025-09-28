@@ -1,12 +1,12 @@
 FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 COPY ./ .
-RUN ./gradlew clean build -x test
+RUN ./gradlew clean bootJar -x test --stacktrace --no-daemon
 
 FROM eclipse-temurin:17-jdk
 EXPOSE 8080
 WORKDIR /app
-COPY --from=build build/libs/app.jar app.jar
+COPY --from=build /app/build/libs/app.jar app.jar
 
 ENTRYPOINT java \
   -XX:InitialRAMPercentage=75.0 \
